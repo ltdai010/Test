@@ -1,6 +1,3 @@
-/**
- * Created by CCNE on 11/09/2019.
- */
 public class Fraction {
     private int numerator = 0;
     private int denominator = 1;
@@ -38,7 +35,11 @@ public class Fraction {
         denominator = denominator/math.gcd(numerator, denominator);
     }
     public Fraction add(Fraction other) {
-
+        Week3Task1 math = new Week3Task1();
+        int tempDenominator = this.denominator*other.denominator/math.gcd(this.denominator, other.denominator);
+        int tempNumerator = (this.numerator*other.denominator + this.denominator*other.numerator)/
+                math.gcd(this.denominator, other.denominator);
+        return new Fraction(tempNumerator,tempDenominator);
     }
 
     // subtract
